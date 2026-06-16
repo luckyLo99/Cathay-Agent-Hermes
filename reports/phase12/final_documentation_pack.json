@@ -1,0 +1,53 @@
+{
+  "created_at": "2026-06-16T09:02:00.373874Z",
+  "evidence_paths": [
+    "reports/phase11/shadow_assembly_manifest.json",
+    "reports/phase11/release_gate_report.json",
+    "reports/phase11/phase11_test_result.md",
+    "reports/phase11/phase11_exit_checklist.md",
+    "reports/phase11/phase11_execution_log.md",
+    "reports/phase10/golden_trace_replay_report.json",
+    "reports/phase9/native_boundary_contract_report.json"
+  ],
+  "pack_hash": "ea133a600350c2352db69f528d633ca661735d2335c72ddda37f64e7f3b00406",
+  "pack_id": "93466d38-b439-4740-b837-d55c2e1cf6e0",
+  "phase": 12,
+  "sections": [
+    {
+      "body": "Phase 12 finalization packages the hermes_ext shadow architecture for merge-readiness review. It does not approve Hermes native integration and does not patch Hermes core.\n\n- Phase 11 release gate ok: `True`\n- Assembly manifest hash: `da522fc95449850a4efca58a94f0ac5dfdecdf091377d960913503d6c94a553f`\n- Test evidence contains 241/241 PASS: `True`",
+      "priority": 10,
+      "title": "Executive Summary"
+    },
+    {
+      "body": "The shadow architecture remains isolated under hermes_ext:\n\n- runtime: request envelope, mock provider, agent doctor.\n- schema: portable schema validation.\n- hooks/security: hook dispatcher, PreToolGuard, path/url/command/exec policies.\n- cathay: read-only signal adapter.\n- memoryx: isolated shadow memory provider.\n- orchestration: checkpoint, replay, span log, circuit breaker.\n- harness: feature flags and explicit integration harness.\n- adapter_scan: read-only Hermes adapter mapping.\n- integration_spec: zero-touch integration design matrix.\n- native_boundary: no-op / blocked native boundary contract.\n- golden_trace: deterministic replay pack.\n- assembly: release-style manifest and invariant gate.\n- finalization: documentation pack, merge readiness gate, stabilization bundle.",
+      "priority": 20,
+      "title": "Architecture Summary"
+    },
+    {
+      "body": "The following Phase 11 assembly invariants are treated as non-negotiable release gates:\n\n- `assembly.artifacts_exist` -> `pass` / `info`\n- `assembly.no_lifeline_source_artifacts` -> `pass` / `critical`\n- `assembly.feature_flags_default_disabled` -> `pass` / `critical`\n- `assembly.no_forbidden_imports` -> `pass` / `critical`\n- `assembly.phase10_golden_trace_stable` -> `pass` / `critical`\n- `assembly.phase9_native_boundary_no_side_effects` -> `pass` / `critical`\n\nIf any critical invariant fails, Phase 12 must not be treated as merge-ready.",
+      "priority": 30,
+      "title": "Safety Invariants"
+    },
+    {
+      "body": "Recommended final verification commands:\n\n```bash\n.venv\\Scripts\\python -m pytest tests\\hermes_ext -q\n.venv\\Scripts\\python -m hermes_ext.runtime.agent_doctor --json --project-root .\n.venv\\Scripts\\python -m hermes_ext.harness.cli doctor --project-root . --state-dir .hermes_ext_shadow --json\n.venv\\Scripts\\python -m hermes_ext.assembly.cli \\\n  --project-root . \\\n  --manifest-md reports\\phase11\\shadow_assembly_manifest.md \\\n  --manifest-json reports\\phase11\\shadow_assembly_manifest.json \\\n  --gate-md reports\\phase11\\release_gate_report.md \\\n  --gate-json reports\\phase11\\release_gate_report.json\n.venv\\Scripts\\python -m hermes_ext.finalization.cli \\\n  --project-root . \\\n  --output-dir reports\\phase12\n.venv\\Scripts\\python cli.py --help\n.venv\\Scripts\\hermes doctor\n```",
+      "priority": 40,
+      "title": "Operator Commands"
+    },
+    {
+      "body": "Rollback anchors:\n\n- Phase 11 rollback: `git reset --hard phase10-golden-trace-replay`\n- Phase 10 rollback: `git reset --hard phase9-noop-native-boundary-contracts`\n- Phase 9 rollback: `git reset --hard phase8-zero-touch-integration-spec`\n- Phase 8 rollback: `git reset --hard phase7-readonly-adapter-scan`\n- Phase 7 rollback: `git reset --hard phase6-feature-flag-harness`\n- Phase 6 rollback: `git reset --hard phase5-shadow-orchestration-replay`\n- Phase 5 rollback: `git reset --hard phase4-memoryx-shadow-provider`\n- Phase 4 rollback: `git reset --hard phase3-cathay-readonly-adapter`\n- Phase 3 rollback: `git reset --hard phase2-hook-pretool-policy`\n- Phase 2 rollback: `git reset --hard phase1-offline-runtime-skeleton`\n- Phase 1 rollback: `git reset --hard baseline-before-fusion`",
+      "priority": 50,
+      "title": "Rollback Index"
+    },
+    {
+      "body": "Merge readiness is limited to hermes_ext shadow extension artifacts.\n\nMerge-ready means:\n\n- tests pass;\n- release gate passes;\n- no critical invariant fails;\n- golden traces are stable;\n- no-op native boundary remains side-effect free;\n- feature flags are disabled by default;\n- Hermes native files remain untouched.\n\nMerge-ready does not mean:\n\n- Hermes core integration is approved;\n- native providers may be called;\n- tools may execute;\n- native memory may be written;\n- prompt/state/runtime files may be patched.",
+      "priority": 60,
+      "title": "Merge Readiness Notes"
+    },
+    {
+      "body": "Maintenance rules after Phase 12:\n\n1. Any new hermes_ext module must include a no-import test.\n2. Any runnable behavior must be gated by HERMES_EXT_ENABLED and kill-switch compatible.\n3. Any tool-shaped behavior must pass through PreToolGuard.\n4. Any memory-shaped behavior must remain shadow-only unless a later explicit phase approves native integration.\n5. Any new trace-sensitive behavior must add or update golden trace cases.\n6. Any new report-producing module must include markdown and JSON output.\n7. Any future native boundary must remain no-op by default.\n8. Any attempt to touch Hermes lifeline files requires a new phase, explicit approval, and a rollback plan.",
+      "priority": 70,
+      "title": "Maintenance Guide"
+    }
+  ],
+  "title": "Final Stabilization Documentation Pack"
+}

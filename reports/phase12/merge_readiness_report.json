@@ -1,0 +1,104 @@
+{
+  "created_at": "2026-06-16T09:02:00.376292Z",
+  "evidence_count": 7,
+  "failed": 0,
+  "invariants": [
+    {
+      "evidence": {
+        "count": 7
+      },
+      "invariant_id": "finalization.required_evidence_exists",
+      "message": "All required Phase 9-11 evidence files exist.",
+      "severity": "critical",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "blocking_failures": 0,
+        "ok": true,
+        "warnings": 0
+      },
+      "invariant_id": "finalization.phase11_release_gate_clean",
+      "message": "Phase 11 release gate is clean.",
+      "severity": "critical",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "failed": 0,
+        "manifest_hash": "da522fc95449850a4efca58a94f0ac5dfdecdf091377d960913503d6c94a553f",
+        "passed": 6,
+        "warned": 0
+      },
+      "invariant_id": "finalization.phase11_manifest_clean",
+      "message": "Phase 11 assembly manifest is clean.",
+      "severity": "critical",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "expected_total_tests": 241,
+        "has_zero_fail": true
+      },
+      "invariant_id": "finalization.phase11_tests_clean",
+      "message": "Phase 11 test evidence is clean.",
+      "severity": "critical",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "missing": []
+      },
+      "invariant_id": "finalization.phase11_exit_checklist_clean",
+      "message": "Phase 11 exit checklist confirms no-touch constraints.",
+      "severity": "critical",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "case_count": 5,
+        "failed": 0,
+        "stable_cases": 5,
+        "unstable_cases": 0
+      },
+      "invariant_id": "finalization.phase10_golden_trace_stable",
+      "message": "Phase 10 golden trace remains stable.",
+      "severity": "critical",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "failed": 0,
+        "side_effect_counts": {
+          "memory_written": 0,
+          "native_called": 0,
+          "patch_generated": 0,
+          "provider_called": 0,
+          "secret_read": 0,
+          "state_mutated": 0,
+          "tool_executed": 0
+        },
+        "violations": 0
+      },
+      "invariant_id": "finalization.phase9_native_boundary_no_side_effects",
+      "message": "Phase 9 native boundary remains no-op and side-effect free.",
+      "severity": "critical",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "present": true
+      },
+      "invariant_id": "finalization.rollback_index_present",
+      "message": "Rollback evidence is present.",
+      "severity": "error",
+      "status": "pass"
+    }
+  ],
+  "ok": true,
+  "passed": 8,
+  "phase": 12,
+  "readiness_hash": "8c9129d88fdffa7ab5828c42e3a5f7d9c3bfa66baf739072a297ec5972f82029",
+  "report_id": "e5f3a4de-f638-4170-bf88-019d678e909e",
+  "warned": 0
+}
