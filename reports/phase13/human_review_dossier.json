@@ -1,0 +1,24 @@
+{
+  "dossier_hash": "d4c882d0d103eec6aea947c00d08d79aa10d611805f94f49df650d50053a675a",
+  "dossier_id": "89b681b3-9166-45c2-abf2-3128d74d4291",
+  "phase": 13,
+  "sections": {
+    "acceptance_criteria": "Phase 13 acceptance criteria:\n\n- Phase 12 evidence is present and parseable.\n- Phase 12 merge readiness remains ok=true.\n- Phase 12 tests remain clean.\n- No-touch constraints are explicitly confirmed.\n- Maintenance rules remain strict.\n- Rollback evidence is present.\n- Native experiment proposal is document-only and not approved.\n- Any approval decision is explicit, attributable, and acknowledged.",
+    "architecture_review": "Architecture under review:\n\n```text\nhermes_ext\n  runtime / schema / hooks / security\n  cathay / memoryx\n  orchestration / harness\n  adapter_scan / integration_spec\n  native_boundary / golden_trace\n  assembly / finalization\n  human_review\n```\n\nThe review must preserve the shadow-only interpretation:\n\n- Cathay remains advisory signal only.\n- MemoryX remains isolated shadow memory only.\n- Native boundary remains no-op or blocked.\n- Feature flags remain disabled by default.\n- Kill switch remains dominant.\n- Reports remain reproducible markdown and JSON artifacts.",
+    "executive_summary": "Phase 13 packages Phase 12 evidence for human review and merge-decision\ndiscussion. It does not approve Hermes native integration.\n\nRequired evidence missing: `none`.\nRequired evidence invalid: `none`.\n\nThe default Phase 13 decision is `pending_human_review`. A shadow-merge\napproval requires explicit human reviewer identity and acknowledgements.\nNative experiment work remains proposal-only and not approved.",
+    "next_phase_policy": "Phase 13 may produce one of four decisions:\n\n- `pending_human_review`\n- `approve_shadow_merge`\n- `request_changes`\n- `reject_shadow_merge`\n\nEven if `approve_shadow_merge` is selected, the approval is limited to\nhermes_ext shadow extension artifacts. It does not approve native\nadapter work. A native experiment can only begin in a separate later\nphase with explicit scope, rollback, and no-op-first constraints.",
+    "review_questions": "Human reviewers should answer:\n\n1. Are the Phase 12 reports sufficient for shadow extension review?\n2. Is the no-touch boundary still acceptable and clear?\n3. Are feature flags and kill switch rules clear enough for operators?\n4. Is rollback documented well enough for merge review?\n5. Are there any ambiguous statements that imply native integration?\n6. Should the package be accepted as a shadow extension only?\n7. Should a separate future phase be opened for native experiment design?",
+    "risk_register": "Primary risks to review:\n\n| Risk | Expected Control |\n|---|---|\n| Release gate misread as native approval | Phase 13 decision text must explicitly reject this interpretation |\n| Shadow memory accidentally promoted | Maintenance guide must preserve shadow-only memory rule |\n| Native boundary normalized into adapter | Proposal must remain document-only and not approved |\n| Future changes touch lifeline files | Any lifeline touch requires a new explicit phase |\n| Feature flags drift from default-off | Human review must check default-off and kill-switch precedence |\n| Evidence becomes stale | Cold-start validation must replay Phase 12 checks before merge |",
+    "scope": "In scope:\n\n- Review Phase 12 finalization evidence.\n- Confirm shadow extension merge-readiness.\n- Produce a human review dossier.\n- Produce a merge decision report.\n- Produce a cold-start validation plan.\n- Produce a native experiment proposal for a later phase.\n\nOut of scope:\n\n- Modifying Hermes native lifeline files.\n- Creating native adapters.\n- Calling real providers or models.\n- Executing real tools.\n- Writing Hermes native memory.\n- Promoting shadow memory to native memory.\n- Generating patches against Hermes core."
+  },
+  "source_evidence": [
+    "reports/phase12/merge_readiness_report.json",
+    "reports/phase12/final_documentation_pack.json",
+    "reports/phase12/final_stabilization_bundle.json",
+    "reports/phase12/phase12_test_result.md",
+    "reports/phase12/phase12_exit_checklist.md",
+    "reports/phase12/maintenance_guide.md",
+    "reports/phase12/rollback_index.md"
+  ],
+  "title": "Phase 13 Human Review Dossier"
+}

@@ -1,0 +1,237 @@
+{
+  "bundle_hash": "3c9da163f2f6c78a7ab238fec7be0cda59b02abf85d7c1c03090ffe88ec8dc3b",
+  "bundle_id": "89b681b3-9166-45c2-abf2-3128d74d4291",
+  "cold_start_validation_plan": {
+    "forbidden_actions": [
+      "Do not modify Hermes CLI or main loop.",
+      "Do not modify pyproject.toml or lock files.",
+      "Do not install new dependencies.",
+      "Do not call real providers or models.",
+      "Do not execute real tools.",
+      "Do not write Hermes native memory.",
+      "Do not generate native adapter code."
+    ],
+    "objective": "Reproduce the Phase 12 evidence from a clean checkout before any human merge decision is treated as valid.",
+    "pass_criteria": [
+      "All hermes_ext tests pass.",
+      "Phase 12 merge readiness remains ok=true.",
+      "Phase 13 merge decision report remains ok=true for pending review.",
+      "No Hermes lifeline files appear in git diff.",
+      "No provider, tool, native memory, state, secret, or patch side effect occurs."
+    ],
+    "phase": 13,
+    "plan_hash": "1b11c6b3e1d3d3b6abbb3974ab398df16650aa26bed6ac635b3703881703e96a",
+    "plan_id": "7919b9ee-da2a-4eb6-accd-ae0cd21087d8",
+    "steps": [
+      "Checkout tag phase12-final-stabilization-merge-readiness.",
+      "Create or reuse the isolated Python virtual environment.",
+      "Run py_compile for hermes_ext source files.",
+      "Run pytest tests/hermes_ext -q.",
+      "Run hermes_ext.runtime.agent_doctor.",
+      "Run hermes_ext.harness.cli doctor with all flags disabled.",
+      "Run hermes_ext.finalization.cli to regenerate Phase 12 evidence.",
+      "Run hermes_ext.human_review.cli to regenerate Phase 13 reports.",
+      "Run cli.py --help.",
+      "Run hermes doctor.",
+      "Inspect git diff --stat and git status --short."
+    ],
+    "title": "Phase 13 Cold Start Validation Plan"
+  },
+  "dossier": {
+    "dossier_hash": "d4c882d0d103eec6aea947c00d08d79aa10d611805f94f49df650d50053a675a",
+    "dossier_id": "89b681b3-9166-45c2-abf2-3128d74d4291",
+    "phase": 13,
+    "sections": {
+      "acceptance_criteria": "Phase 13 acceptance criteria:\n\n- Phase 12 evidence is present and parseable.\n- Phase 12 merge readiness remains ok=true.\n- Phase 12 tests remain clean.\n- No-touch constraints are explicitly confirmed.\n- Maintenance rules remain strict.\n- Rollback evidence is present.\n- Native experiment proposal is document-only and not approved.\n- Any approval decision is explicit, attributable, and acknowledged.",
+      "architecture_review": "Architecture under review:\n\n```text\nhermes_ext\n  runtime / schema / hooks / security\n  cathay / memoryx\n  orchestration / harness\n  adapter_scan / integration_spec\n  native_boundary / golden_trace\n  assembly / finalization\n  human_review\n```\n\nThe review must preserve the shadow-only interpretation:\n\n- Cathay remains advisory signal only.\n- MemoryX remains isolated shadow memory only.\n- Native boundary remains no-op or blocked.\n- Feature flags remain disabled by default.\n- Kill switch remains dominant.\n- Reports remain reproducible markdown and JSON artifacts.",
+      "executive_summary": "Phase 13 packages Phase 12 evidence for human review and merge-decision\ndiscussion. It does not approve Hermes native integration.\n\nRequired evidence missing: `none`.\nRequired evidence invalid: `none`.\n\nThe default Phase 13 decision is `pending_human_review`. A shadow-merge\napproval requires explicit human reviewer identity and acknowledgements.\nNative experiment work remains proposal-only and not approved.",
+      "next_phase_policy": "Phase 13 may produce one of four decisions:\n\n- `pending_human_review`\n- `approve_shadow_merge`\n- `request_changes`\n- `reject_shadow_merge`\n\nEven if `approve_shadow_merge` is selected, the approval is limited to\nhermes_ext shadow extension artifacts. It does not approve native\nadapter work. A native experiment can only begin in a separate later\nphase with explicit scope, rollback, and no-op-first constraints.",
+      "review_questions": "Human reviewers should answer:\n\n1. Are the Phase 12 reports sufficient for shadow extension review?\n2. Is the no-touch boundary still acceptable and clear?\n3. Are feature flags and kill switch rules clear enough for operators?\n4. Is rollback documented well enough for merge review?\n5. Are there any ambiguous statements that imply native integration?\n6. Should the package be accepted as a shadow extension only?\n7. Should a separate future phase be opened for native experiment design?",
+      "risk_register": "Primary risks to review:\n\n| Risk | Expected Control |\n|---|---|\n| Release gate misread as native approval | Phase 13 decision text must explicitly reject this interpretation |\n| Shadow memory accidentally promoted | Maintenance guide must preserve shadow-only memory rule |\n| Native boundary normalized into adapter | Proposal must remain document-only and not approved |\n| Future changes touch lifeline files | Any lifeline touch requires a new explicit phase |\n| Feature flags drift from default-off | Human review must check default-off and kill-switch precedence |\n| Evidence becomes stale | Cold-start validation must replay Phase 12 checks before merge |",
+      "scope": "In scope:\n\n- Review Phase 12 finalization evidence.\n- Confirm shadow extension merge-readiness.\n- Produce a human review dossier.\n- Produce a merge decision report.\n- Produce a cold-start validation plan.\n- Produce a native experiment proposal for a later phase.\n\nOut of scope:\n\n- Modifying Hermes native lifeline files.\n- Creating native adapters.\n- Calling real providers or models.\n- Executing real tools.\n- Writing Hermes native memory.\n- Promoting shadow memory to native memory.\n- Generating patches against Hermes core."
+    },
+    "source_evidence": [
+      "reports/phase12/merge_readiness_report.json",
+      "reports/phase12/final_documentation_pack.json",
+      "reports/phase12/final_stabilization_bundle.json",
+      "reports/phase12/phase12_test_result.md",
+      "reports/phase12/phase12_exit_checklist.md",
+      "reports/phase12/maintenance_guide.md",
+      "reports/phase12/rollback_index.md"
+    ],
+    "title": "Phase 13 Human Review Dossier"
+  },
+  "merge_decision_report": {
+    "blocking_failures": [],
+    "decision": "pending_human_review",
+    "decision_allowed": true,
+    "findings": [
+      {
+        "evidence_refs": [
+          "reports/phase12/merge_readiness_report.json",
+          "reports/phase12/final_documentation_pack.json",
+          "reports/phase12/final_stabilization_bundle.json",
+          "reports/phase12/phase12_test_result.md",
+          "reports/phase12/phase12_exit_checklist.md",
+          "reports/phase12/maintenance_guide.md",
+          "reports/phase12/rollback_index.md"
+        ],
+        "id": "human_review.phase12_evidence_exists",
+        "message": "All required Phase 12 evidence files exist and parse.",
+        "severity": "critical",
+        "status": "pass"
+      },
+      {
+        "evidence_refs": [
+          "reports/phase12/merge_readiness_report.json"
+        ],
+        "id": "human_review.phase12_merge_readiness_clean",
+        "message": "Phase 12 merge readiness is clean with passed=8.",
+        "severity": "critical",
+        "status": "pass"
+      },
+      {
+        "evidence_refs": [
+          "reports/phase12/phase12_test_result.md"
+        ],
+        "id": "human_review.phase12_tests_clean",
+        "message": "Phase 12 test evidence confirms clean tests and no-import coverage.",
+        "severity": "error",
+        "status": "pass"
+      },
+      {
+        "evidence_refs": [
+          "reports/phase12/phase12_exit_checklist.md"
+        ],
+        "id": "human_review.phase12_no_touch_constraints_confirmed",
+        "message": "Phase 12 no-touch constraints are explicitly confirmed.",
+        "severity": "critical",
+        "status": "pass"
+      },
+      {
+        "evidence_refs": [
+          "reports/phase12/merge_readiness_report.json",
+          "reports/phase12/final_documentation_pack.json"
+        ],
+        "id": "human_review.phase12_native_integration_not_approved",
+        "message": "Phase 12 evidence clearly states native integration is not approved.",
+        "severity": "critical",
+        "status": "pass"
+      },
+      {
+        "evidence_refs": [
+          "reports/phase12/maintenance_guide.md"
+        ],
+        "id": "human_review.maintenance_rules_preserved",
+        "message": "Phase 12 maintenance rules preserve no-import, shadow-only, no-op, and lifeline controls.",
+        "severity": "error",
+        "status": "pass"
+      },
+      {
+        "evidence_refs": [
+          "reports/phase12/merge_readiness_report.json",
+          "reports/phase12/rollback_index.md"
+        ],
+        "id": "human_review.rollback_evidence_present",
+        "message": "Rollback evidence is present.",
+        "severity": "error",
+        "status": "pass"
+      },
+      {
+        "evidence_refs": [
+          "reports/phase13/cold_start_validation_plan.md"
+        ],
+        "id": "human_review.cold_start_plan_present",
+        "message": "Cold-start validation plan is generated by Phase 13.",
+        "severity": "error",
+        "status": "pass"
+      },
+      {
+        "evidence_refs": [
+          "reports/phase13/native_experiment_proposal.md"
+        ],
+        "id": "human_review.native_experiment_proposal_document_only",
+        "message": "Native experiment proposal is document-only and not approved.",
+        "severity": "critical",
+        "status": "pass"
+      },
+      {
+        "evidence_refs": [],
+        "id": "human_review.human_decision_requires_acknowledgement",
+        "message": "Decision remains pending human review.",
+        "severity": "info",
+        "status": "pass"
+      }
+    ],
+    "missing_acknowledgements": [],
+    "ok": true,
+    "phase": 13,
+    "provided_acknowledgements": [],
+    "recommendations": [
+      "Treat Phase 13 as human review and decision packaging only.",
+      "Do not start native adapter implementation from Phase 13.",
+      "Use cold-start validation before treating any shadow merge approval as final.",
+      "If native experiment is desired, open a separate later phase with no-op-first constraints."
+    ],
+    "report_hash": "1051eeb05c33c7e6a0a07db7678766a8a9221a6c160bcef2ed4d39105e34ce4d",
+    "report_id": "b817f882-8945-4f62-a44d-2ac93d1f5509",
+    "required_acknowledgements": [],
+    "review_ready": true,
+    "reviewer": "",
+    "warnings": []
+  },
+  "native_experiment_proposal": {
+    "allowed_work": [
+      "Write design documents only.",
+      "Define candidate native experiment scope.",
+      "Define no-op-first test requirements.",
+      "Define rollback and kill-switch requirements.",
+      "Define human approval requirements for a later phase."
+    ],
+    "candidate_next_phase": "Phase 14: No-op-first Native Experiment Design",
+    "forbidden_work": [
+      "Do not implement native adapter code.",
+      "Do not modify Hermes native lifeline files.",
+      "Do not call native providers or model SDKs.",
+      "Do not execute real tools.",
+      "Do not write Hermes native memory.",
+      "Do not write Hermes skills.",
+      "Do not modify state databases.",
+      "Do not generate patches against Hermes core."
+    ],
+    "objective": "Describe what a future native experiment phase would need to prove before any Hermes native boundary could be reconsidered.",
+    "phase": 13,
+    "proposal_hash": "686f1411d2bb03065ca0741d24a5737d91817db8f84596402e816e4590ef4e17",
+    "proposal_id": "bc9a0da3-ceda-4c08-9bd8-25472545aace",
+    "required_preconditions": [
+      "Phase 13 human review must explicitly approve shadow merge or request changes.",
+      "A separate future phase must explicitly authorize native experiment design.",
+      "The future phase must start from no-op-first contracts.",
+      "The future phase must include rollback and exit criteria before code.",
+      "The future phase must preserve feature flags default-off and kill-switch dominance."
+    ],
+    "rollback_requirements": [
+      "Primary rollback anchor remains phase12-final-stabilization-merge-readiness.",
+      "Previous rollback anchor remains phase11-shadow-assembly-manifest.",
+      "No rollback step may partially delete Hermes native files.",
+      "Any future experimental files must be deletable without affecting Hermes runtime."
+    ],
+    "status": "document_only_not_approved"
+  },
+  "output_artifacts": [
+    "reports\\phase13\\human_review_dossier.md",
+    "reports\\phase13\\human_review_dossier.json",
+    "reports\\phase13\\merge_decision_report.md",
+    "reports\\phase13\\merge_decision_report.json",
+    "reports\\phase13\\cold_start_validation_plan.md",
+    "reports\\phase13\\cold_start_validation_plan.json",
+    "reports\\phase13\\native_experiment_proposal.md",
+    "reports\\phase13\\native_experiment_proposal.json",
+    "reports\\phase13\\review_board_checklist.md",
+    "reports\\phase13\\phase13_execution_log.md",
+    "reports\\phase13\\phase13_exit_checklist.md",
+    "reports\\phase13\\phase13_test_result.md",
+    "reports\\phase13\\phase13_review_bundle.json"
+  ],
+  "phase": 13
+}
