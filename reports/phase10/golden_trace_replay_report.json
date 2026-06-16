@@ -1,0 +1,1094 @@
+{
+  "case_count": 5,
+  "created_at": "2026-06-16T07:46:28.514237Z",
+  "failed": 0,
+  "metadata": {
+    "phase": 10,
+    "project_root": "D:\\projects\\hermes-agent-main",
+    "state_dir": "D:\\projects\\hermes-agent-main\\reports\\phase10\\golden_state"
+  },
+  "ok": true,
+  "pack_id": "a8b397f0-2908-40cb-9c71-976b3dc37f85",
+  "passed": 10,
+  "repeat": 2,
+  "report_hash": "5fbcfaab757e263598732f81986d3aa22e2276bd2d0b30c6160113bb1da3e707",
+  "report_id": "e245b6cf-e24f-4baa-87ff-ffa4e151dd44",
+  "result_count": 10,
+  "results": [
+    {
+      "canonical_hash": "c6cecb06d09bd1b9b08070e63af3775f930c533ba4ccfaef6d63de0acd4ebc0a",
+      "case_id": "diagnostic-default-off",
+      "created_at": "2026-06-16T07:46:27.616530Z",
+      "error": null,
+      "iteration": 0,
+      "normalized_output": {
+        "case_kind": "diagnostic",
+        "harness": {
+          "diagnostics": {
+            "checks": [
+              {
+                "detail": "Python 3.12.10",
+                "name": "python_version",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "all hermes_ext modules importable",
+                "name": "required_modules",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "all extension capabilities effectively disabled by default",
+                "name": "feature_flags",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "project root exists: D:\\projects\\hermes-agent-main",
+                "name": "project_root",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "no forbidden runtime modules loaded by diagnostics",
+                "name": "forbidden_modules",
+                "ok": true,
+                "severity": "info"
+              }
+            ],
+            "ok": true
+          },
+          "error": null,
+          "flags": {
+            "cathay": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "checkpoint_replay": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "diagnostics": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "enabled": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "kill_switch": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "memoryx": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "pretool_guard": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "shadow_runner": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            }
+          },
+          "mode": "diagnostic",
+          "ok": true,
+          "replay_result": null,
+          "shadow_result": null,
+          "warnings": []
+        }
+      },
+      "ok": true,
+      "status": "passed",
+      "warnings": []
+    },
+    {
+      "canonical_hash": "125736efaf975f253f440693e30125fda209bc2f1e7e507bc6d0313024c0a883",
+      "case_id": "shadow-basic-all-enabled",
+      "created_at": "2026-06-16T07:46:27.784104Z",
+      "error": null,
+      "iteration": 0,
+      "normalized_output": {
+        "case_kind": "shadow_text",
+        "harness": {
+          "diagnostics": {
+            "checks": [
+              {
+                "detail": "Python 3.12.10",
+                "name": "python_version",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "all hermes_ext modules importable",
+                "name": "required_modules",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "enabled effective flags: enabled, shadow_runner, pretool_guard, cathay, memoryx, checkpoint_replay",
+                "name": "feature_flags",
+                "ok": true,
+                "severity": "warning"
+              },
+              {
+                "detail": "project root exists: D:\\projects\\hermes-agent-main",
+                "name": "project_root",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "no forbidden runtime modules loaded by diagnostics",
+                "name": "forbidden_modules",
+                "ok": true,
+                "severity": "info"
+              }
+            ],
+            "ok": true
+          },
+          "error": null,
+          "flags": {
+            "cathay": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "checkpoint_replay": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "diagnostics": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "enabled": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "kill_switch": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "memoryx": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "pretool_guard": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "shadow_runner": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            }
+          },
+          "mode": "shadow",
+          "ok": true,
+          "replay_result": {
+            "checkpoint_count": 9,
+            "checkpoints": {
+              "count": 9,
+              "kind_counts": {
+                "after_step": 4,
+                "before_step": 3,
+                "final": 1,
+                "input": 1
+              },
+              "step_counts": {
+                "cathay_adapter": 2,
+                "finalize": 1,
+                "mock_provider": 2,
+                "prepare_envelope": 2,
+                "shadow_memory_write": 2
+              }
+            },
+            "error": null,
+            "mode": "dry_run",
+            "ok": true
+          },
+          "shadow_result": {
+            "checkpoint_count": 9,
+            "error": null,
+            "metadata": {
+              "shadow_memory_count": 5,
+              "span_count": 3
+            },
+            "status": "completed",
+            "warnings": [
+              "observe_only: signals are advisory and must not mutate Hermes state",
+              "human review required before persistence or action"
+            ]
+          },
+          "warnings": [
+            "observe_only: signals are advisory and must not mutate Hermes state",
+            "human review required before persistence or action"
+          ]
+        }
+      },
+      "ok": true,
+      "status": "passed",
+      "warnings": []
+    },
+    {
+      "canonical_hash": "c3e17d39588e79cbdebf7454229a897ee0f45ffea47d20e97faa83f29d040c8d",
+      "case_id": "shadow-dangerous-tool-blocked",
+      "created_at": "2026-06-16T07:46:27.863151Z",
+      "error": null,
+      "iteration": 0,
+      "normalized_output": {
+        "case_kind": "shadow_tool_block",
+        "harness": {
+          "diagnostics": {
+            "checks": [
+              {
+                "detail": "Python 3.12.10",
+                "name": "python_version",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "all hermes_ext modules importable",
+                "name": "required_modules",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "enabled effective flags: enabled, shadow_runner, pretool_guard, checkpoint_replay",
+                "name": "feature_flags",
+                "ok": true,
+                "severity": "warning"
+              },
+              {
+                "detail": "project root exists: D:\\projects\\hermes-agent-main",
+                "name": "project_root",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "no forbidden runtime modules loaded by diagnostics",
+                "name": "forbidden_modules",
+                "ok": true,
+                "severity": "info"
+              }
+            ],
+            "ok": true
+          },
+          "error": null,
+          "flags": {
+            "cathay": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "checkpoint_replay": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "diagnostics": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "enabled": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "kill_switch": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "memoryx": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "pretool_guard": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "shadow_runner": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            }
+          },
+          "mode": "shadow",
+          "ok": true,
+          "replay_result": {
+            "checkpoint_count": 5,
+            "checkpoints": {
+              "count": 5,
+              "kind_counts": {
+                "after_step": 2,
+                "before_step": 1,
+                "final": 1,
+                "input": 1
+              },
+              "step_counts": {
+                "finalize": 1,
+                "prepare_envelope": 2,
+                "pretool_guard": 2
+              }
+            },
+            "error": null,
+            "mode": "dry_run",
+            "ok": true
+          },
+          "shadow_result": {
+            "checkpoint_count": 5,
+            "error": null,
+            "metadata": {
+              "blocked": true
+            },
+            "status": "completed",
+            "warnings": [
+              "pretool_guard blocked tool intent"
+            ]
+          },
+          "warnings": [
+            "cathay disabled by feature flag",
+            "memoryx shadow memory disabled by feature flag",
+            "pretool_guard blocked tool intent"
+          ]
+        }
+      },
+      "ok": true,
+      "status": "passed",
+      "warnings": []
+    },
+    {
+      "canonical_hash": "484f1d8c6d2e05726c536f226dcb645e1da45a698a6813bd9cea277e971bef60",
+      "case_id": "shadow-minimal-no-cathay-no-memory",
+      "created_at": "2026-06-16T07:46:27.955822Z",
+      "error": null,
+      "iteration": 0,
+      "normalized_output": {
+        "case_kind": "shadow_no_cathay_no_memory",
+        "harness": {
+          "diagnostics": {
+            "checks": [
+              {
+                "detail": "Python 3.12.10",
+                "name": "python_version",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "all hermes_ext modules importable",
+                "name": "required_modules",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "enabled effective flags: enabled, shadow_runner",
+                "name": "feature_flags",
+                "ok": true,
+                "severity": "warning"
+              },
+              {
+                "detail": "project root exists: D:\\projects\\hermes-agent-main",
+                "name": "project_root",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "no forbidden runtime modules loaded by diagnostics",
+                "name": "forbidden_modules",
+                "ok": true,
+                "severity": "info"
+              }
+            ],
+            "ok": true
+          },
+          "error": null,
+          "flags": {
+            "cathay": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "checkpoint_replay": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "diagnostics": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "enabled": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "kill_switch": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "memoryx": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "pretool_guard": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "shadow_runner": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            }
+          },
+          "mode": "shadow",
+          "ok": true,
+          "replay_result": null,
+          "shadow_result": {
+            "checkpoint_count": 5,
+            "error": null,
+            "metadata": {
+              "shadow_memory_count": 0,
+              "span_count": 1
+            },
+            "status": "completed",
+            "warnings": []
+          },
+          "warnings": [
+            "cathay disabled by feature flag",
+            "memoryx shadow memory disabled by feature flag"
+          ]
+        }
+      },
+      "ok": true,
+      "status": "passed",
+      "warnings": []
+    },
+    {
+      "canonical_hash": "9c33053755f64d7e3019369477fe8c23e692427a6b6a669d1d952a6de46c5fbe",
+      "case_id": "native-boundary-spec-noop",
+      "created_at": "2026-06-16T07:46:28.089064Z",
+      "error": null,
+      "iteration": 0,
+      "normalized_output": {
+        "case_kind": "native_boundary_spec",
+        "native_boundary": {
+          "case_count": 1464,
+          "failed": 0,
+          "metadata": {
+            "limit": 1464,
+            "source": "D:\\projects\\hermes-agent-main\\reports\\phase8\\zero_touch_integration_spec.json"
+          },
+          "ok": true,
+          "passed": 1464,
+          "results": {
+            "count": 1464,
+            "verdict_counts": {
+              "blocked": 1044,
+              "noop": 420
+            }
+          },
+          "violations": []
+        }
+      },
+      "ok": true,
+      "status": "passed",
+      "warnings": []
+    },
+    {
+      "canonical_hash": "c6cecb06d09bd1b9b08070e63af3775f930c533ba4ccfaef6d63de0acd4ebc0a",
+      "case_id": "diagnostic-default-off",
+      "created_at": "2026-06-16T07:46:28.090580Z",
+      "error": null,
+      "iteration": 1,
+      "normalized_output": {
+        "case_kind": "diagnostic",
+        "harness": {
+          "diagnostics": {
+            "checks": [
+              {
+                "detail": "Python 3.12.10",
+                "name": "python_version",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "all hermes_ext modules importable",
+                "name": "required_modules",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "all extension capabilities effectively disabled by default",
+                "name": "feature_flags",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "project root exists: D:\\projects\\hermes-agent-main",
+                "name": "project_root",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "no forbidden runtime modules loaded by diagnostics",
+                "name": "forbidden_modules",
+                "ok": true,
+                "severity": "info"
+              }
+            ],
+            "ok": true
+          },
+          "error": null,
+          "flags": {
+            "cathay": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "checkpoint_replay": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "diagnostics": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "enabled": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "kill_switch": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "memoryx": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "pretool_guard": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "shadow_runner": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            }
+          },
+          "mode": "diagnostic",
+          "ok": true,
+          "replay_result": null,
+          "shadow_result": null,
+          "warnings": []
+        }
+      },
+      "ok": true,
+      "status": "passed",
+      "warnings": []
+    },
+    {
+      "canonical_hash": "125736efaf975f253f440693e30125fda209bc2f1e7e507bc6d0313024c0a883",
+      "case_id": "shadow-basic-all-enabled",
+      "created_at": "2026-06-16T07:46:28.247591Z",
+      "error": null,
+      "iteration": 1,
+      "normalized_output": {
+        "case_kind": "shadow_text",
+        "harness": {
+          "diagnostics": {
+            "checks": [
+              {
+                "detail": "Python 3.12.10",
+                "name": "python_version",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "all hermes_ext modules importable",
+                "name": "required_modules",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "enabled effective flags: enabled, shadow_runner, pretool_guard, cathay, memoryx, checkpoint_replay",
+                "name": "feature_flags",
+                "ok": true,
+                "severity": "warning"
+              },
+              {
+                "detail": "project root exists: D:\\projects\\hermes-agent-main",
+                "name": "project_root",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "no forbidden runtime modules loaded by diagnostics",
+                "name": "forbidden_modules",
+                "ok": true,
+                "severity": "info"
+              }
+            ],
+            "ok": true
+          },
+          "error": null,
+          "flags": {
+            "cathay": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "checkpoint_replay": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "diagnostics": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "enabled": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "kill_switch": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "memoryx": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "pretool_guard": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "shadow_runner": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            }
+          },
+          "mode": "shadow",
+          "ok": true,
+          "replay_result": {
+            "checkpoint_count": 9,
+            "checkpoints": {
+              "count": 9,
+              "kind_counts": {
+                "after_step": 4,
+                "before_step": 3,
+                "final": 1,
+                "input": 1
+              },
+              "step_counts": {
+                "cathay_adapter": 2,
+                "finalize": 1,
+                "mock_provider": 2,
+                "prepare_envelope": 2,
+                "shadow_memory_write": 2
+              }
+            },
+            "error": null,
+            "mode": "dry_run",
+            "ok": true
+          },
+          "shadow_result": {
+            "checkpoint_count": 9,
+            "error": null,
+            "metadata": {
+              "shadow_memory_count": 5,
+              "span_count": 3
+            },
+            "status": "completed",
+            "warnings": [
+              "observe_only: signals are advisory and must not mutate Hermes state",
+              "human review required before persistence or action"
+            ]
+          },
+          "warnings": [
+            "observe_only: signals are advisory and must not mutate Hermes state",
+            "human review required before persistence or action"
+          ]
+        }
+      },
+      "ok": true,
+      "status": "passed",
+      "warnings": []
+    },
+    {
+      "canonical_hash": "c3e17d39588e79cbdebf7454229a897ee0f45ffea47d20e97faa83f29d040c8d",
+      "case_id": "shadow-dangerous-tool-blocked",
+      "created_at": "2026-06-16T07:46:28.318501Z",
+      "error": null,
+      "iteration": 1,
+      "normalized_output": {
+        "case_kind": "shadow_tool_block",
+        "harness": {
+          "diagnostics": {
+            "checks": [
+              {
+                "detail": "Python 3.12.10",
+                "name": "python_version",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "all hermes_ext modules importable",
+                "name": "required_modules",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "enabled effective flags: enabled, shadow_runner, pretool_guard, checkpoint_replay",
+                "name": "feature_flags",
+                "ok": true,
+                "severity": "warning"
+              },
+              {
+                "detail": "project root exists: D:\\projects\\hermes-agent-main",
+                "name": "project_root",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "no forbidden runtime modules loaded by diagnostics",
+                "name": "forbidden_modules",
+                "ok": true,
+                "severity": "info"
+              }
+            ],
+            "ok": true
+          },
+          "error": null,
+          "flags": {
+            "cathay": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "checkpoint_replay": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "diagnostics": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "enabled": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "kill_switch": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "memoryx": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "pretool_guard": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "shadow_runner": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            }
+          },
+          "mode": "shadow",
+          "ok": true,
+          "replay_result": {
+            "checkpoint_count": 5,
+            "checkpoints": {
+              "count": 5,
+              "kind_counts": {
+                "after_step": 2,
+                "before_step": 1,
+                "final": 1,
+                "input": 1
+              },
+              "step_counts": {
+                "finalize": 1,
+                "prepare_envelope": 2,
+                "pretool_guard": 2
+              }
+            },
+            "error": null,
+            "mode": "dry_run",
+            "ok": true
+          },
+          "shadow_result": {
+            "checkpoint_count": 5,
+            "error": null,
+            "metadata": {
+              "blocked": true
+            },
+            "status": "completed",
+            "warnings": [
+              "pretool_guard blocked tool intent"
+            ]
+          },
+          "warnings": [
+            "cathay disabled by feature flag",
+            "memoryx shadow memory disabled by feature flag",
+            "pretool_guard blocked tool intent"
+          ]
+        }
+      },
+      "ok": true,
+      "status": "passed",
+      "warnings": []
+    },
+    {
+      "canonical_hash": "484f1d8c6d2e05726c536f226dcb645e1da45a698a6813bd9cea277e971bef60",
+      "case_id": "shadow-minimal-no-cathay-no-memory",
+      "created_at": "2026-06-16T07:46:28.398733Z",
+      "error": null,
+      "iteration": 1,
+      "normalized_output": {
+        "case_kind": "shadow_no_cathay_no_memory",
+        "harness": {
+          "diagnostics": {
+            "checks": [
+              {
+                "detail": "Python 3.12.10",
+                "name": "python_version",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "all hermes_ext modules importable",
+                "name": "required_modules",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "enabled effective flags: enabled, shadow_runner",
+                "name": "feature_flags",
+                "ok": true,
+                "severity": "warning"
+              },
+              {
+                "detail": "project root exists: D:\\projects\\hermes-agent-main",
+                "name": "project_root",
+                "ok": true,
+                "severity": "info"
+              },
+              {
+                "detail": "no forbidden runtime modules loaded by diagnostics",
+                "name": "forbidden_modules",
+                "ok": true,
+                "severity": "info"
+              }
+            ],
+            "ok": true
+          },
+          "error": null,
+          "flags": {
+            "cathay": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "checkpoint_replay": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "diagnostics": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "enabled": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "kill_switch": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "default false",
+              "source": "default"
+            },
+            "memoryx": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "pretool_guard": {
+              "effective_enabled": false,
+              "enabled": false,
+              "reason": "explicit argument",
+              "source": "explicit"
+            },
+            "shadow_runner": {
+              "effective_enabled": true,
+              "enabled": true,
+              "reason": "explicit argument",
+              "source": "explicit"
+            }
+          },
+          "mode": "shadow",
+          "ok": true,
+          "replay_result": null,
+          "shadow_result": {
+            "checkpoint_count": 5,
+            "error": null,
+            "metadata": {
+              "shadow_memory_count": 0,
+              "span_count": 1
+            },
+            "status": "completed",
+            "warnings": []
+          },
+          "warnings": [
+            "cathay disabled by feature flag",
+            "memoryx shadow memory disabled by feature flag"
+          ]
+        }
+      },
+      "ok": true,
+      "status": "passed",
+      "warnings": []
+    },
+    {
+      "canonical_hash": "9c33053755f64d7e3019369477fe8c23e692427a6b6a669d1d952a6de46c5fbe",
+      "case_id": "native-boundary-spec-noop",
+      "created_at": "2026-06-16T07:46:28.513238Z",
+      "error": null,
+      "iteration": 1,
+      "normalized_output": {
+        "case_kind": "native_boundary_spec",
+        "native_boundary": {
+          "case_count": 1464,
+          "failed": 0,
+          "metadata": {
+            "limit": 1464,
+            "source": "D:\\projects\\hermes-agent-main\\reports\\phase8\\zero_touch_integration_spec.json"
+          },
+          "ok": true,
+          "passed": 1464,
+          "results": {
+            "count": 1464,
+            "verdict_counts": {
+              "blocked": 1044,
+              "noop": 420
+            }
+          },
+          "violations": []
+        }
+      },
+      "ok": true,
+      "status": "passed",
+      "warnings": []
+    }
+  ],
+  "stable_cases": 5,
+  "unstable_cases": 0,
+  "violations": []
+}
